@@ -1,0 +1,51 @@
+/* index.css */
+
+body {
+  background-color: black;
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.scroll-container {
+  display: flex;
+  overflow: hidden;
+  width: 98vw; /* Make the container full-width */
+  height: 100vh; /* Make the container full-height */
+}
+
+.scroll-content {
+  display: flex;
+  animation: scroll 25s linear infinite; /* Adjust the duration for the entire scroll */
+}
+
+.image {
+  width: 16rem; /* Adjust the width of your images for larger screens */
+  height: 7rem; /* Maintain aspect ratio */
+  margin-right: 2rem; /* Adjust the spacing between images for larger screens */
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .image,
+  .fasttrack {
+    width: 100%; /* Make images full-width for smaller screens */
+    height: auto; /* Allow images to scale with the width */
+    margin-right: 0; /* Remove spacing between images for smaller screens */
+    margin-bottom: 1rem; /* Add spacing below images for smaller screens */
+  }
+
+  .scroll-content {
+    animation: scroll 50s linear infinite; /* Adjust the duration for smaller screens */
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-78%); /* Adjust to match the width of your images */
+  }
+}
